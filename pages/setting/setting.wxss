@@ -1,0 +1,51 @@
+/* pages/setting/setting.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.setting_bg{
+  background: #fff;
+  height:auto;
+  overflow: hidden
+}
+.container > view{
+  padding:20rpx;
+  border-radius: 10rpx;
+  background: #fff;
+}
+.container > view >text{
+  color: #000;
+  font-size: 32rpx;
+  font-weight: bold
+}
+.bg{
+  text-align: center;
+  width: 50%;
+  float: left;
+  position: relative
+}
+.setting_bg .bg_img{
+  width:238rpx;
+  height:238rpx;
+  padding: 40rpx 0 20rpx 0;
+}
+.bg icon{
+  position: absolute;
+  right:24rpx;
+  top:30rpx;
+  z-index: 22;
+}
+.setting_time{  
+  margin-top:20rpx;
+  height: auto;
+  flex: 1;
+}
+.slider{
+  padding:50rpx 0
+}
+.picker{
+  color:#999;
+  font-size: 32rpx;
+  padding:20rpx 0 0 0
+}

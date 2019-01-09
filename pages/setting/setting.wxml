@@ -1,0 +1,28 @@
+<!--pages/setting/setting.wxml-->
+<view class="container" style="height:{{height}}px">
+  <view class="setting_bg">
+    <text>主题背景</text>
+    <view>
+      <view class="bg" >
+        <image src='../../images/black_bg.jpg' class='bg_img' data-index="1" bindtap='chooseBg'></image>
+        <icon type="success" size="24" wx:if="{{bgChoose}}"/>
+      </view>
+      <view class="bg">
+        <image src='../../images/pick_bg.jpg' class='bg_img' data-index="2" bindtap='chooseBg'></image>
+        <icon type="success" size="24" wx:if="{{bgChoosed}}"/>
+      </view> 
+    </view>
+  </view>
+  <view class="setting_time">
+    <text>设置自我时间</text>
+    <view class="slider">
+      <slider bindchange="sliderChange" min="4" max="24" show-value />
+    </view>
+    <text>选择起始时间</text>
+    <view>
+      <picker mode="time" value="{{time}}" start="12:01" end="23:59" bindchange="bindTimeChange">
+        <view class="picker">当前选择: {{time}}</view>
+      </picker>
+    </view>
+  </view>
+</view> 
