@@ -1,1 +1,41 @@
 /* pages/help/help.wxss */
+page{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #f8f8f8;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+.container{
+  height:100%;
+  padding:30rpx;
+  background:#fff;
+  box-sizing:border-box;
+  border-radius:6rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #4A4A4A;
+}
+.title{
+  font-size:32rpx;
+  line-height: 45rpx;
+  font-weight:400;
+  color:rgba(14,14,14,1);
+  text-align: center;
+  padding: 20rpx 0 30rpx;
+}
+.title text{
+  position: relative;
+  z-index: 1;
+}
+.title text:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: #FFA4A1;
+  width: 100%;
+  height: 15rpx;
+}

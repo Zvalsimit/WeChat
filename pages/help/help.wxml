@@ -1,2 +1,9 @@
 <!--pages/help/help.wxml-->
-<text>pages/help/help.wxml</text>
+<view class="container">
+  <view class='title'>
+    <text>自我时钟长什么样？</text>
+  </view>
+  <view class="">1，设置自我时间：首页有四个时间选择，更多选择请到设置页设置。</view> 
+  <view class="">2，起始钟点：在设置页有起始时间选项，点击进去选择。若不再改变，则程序默认该时间，每日自动启动计时。</view> 
+  <view class="">3，中心区域圆形是通用时钟，点击中心区域，显现时针。</view>
+</view>

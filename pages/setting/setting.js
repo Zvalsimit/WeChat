@@ -5,39 +5,58 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bgChoose:true,
-    bgChoosed:false,
-    time:"12:01",
-    height:""
+    bgChoose: true,
+    bgChoosed: false,
+    startTime: "8:00",
+    sliderValue: 6,
+    height: "",
+    switchChecked: false,
+    isShow: false
   },
   //背景选择
   chooseBg:function(e){
-    
     var i = e.currentTarget.dataset.index;
-    console.log(i)
-    if(i == 1){
+    if(i == 0){
       this.setData({
         bgChoose: true,
         bgChoosed: false
       })
-    }else if(i == 2){
+    }else if(i == 1){
       this.setData({
         bgChoose: false,
         bgChoosed: true
       })
     }
+    wx.setStorageSync("bgChoose", e.currentTarget.dataset.index)
   },
   //设置时间
   sliderChange:function(e){
-    console.log(e.detail.value)
+    wx.setStorageSync("num", e.detail.value)
   },
   //设置起始时间
   bindTimeChange: function (e) {
     console.log(e.detail.value)
     this.setData({
-      time: e.detail.value
+      startTime: e.detail.value
     })
+    wx.setStorageSync("startTime", this.data.startTime)
   },
+  // //计时方式
+  //   //手动计时
+  // switchChange:function(e){
+  //   if (e.detail.value == true){
+  //     this.setData({
+  //       isShow: false
+  //     })
+  //   }else{
+  //     this.setData({
+  //       isShow: true
+  //     })
+  //   }
+  //   console.log(e.detail.value)
+  //   wx.setStorageSync("switch_manual", e.detail.value)
+  // },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -46,12 +65,12 @@ Page({
     //读取设备的高度
     wx.getSystemInfo({
       success(res) {
-        console.log(res.windowHeight)
         _this.setData({
           height: res.windowHeight
         })
       }
     })
+    
   },
 
   /**
@@ -65,7 +84,37 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    //背景
+    var bg = wx.getStorageSync('bgChoose');
+    if (bg == 0) {
+      this.setData({
+        bgChoose: true,
+        bgChoosed: false
+      })
+    } else if (bg == 1) {
+      this.setData({
+        bgChoose: false,
+        bgChoosed: true
+      })
+    }
+    //手动计时
+    // var switch_manual = wx.getStorageSync('switch_manual');
+    // if (switch_manual){
+    //   this.setData({
+    //     switchChecked: switch_manual,
+    //     isShow: !switch_manual,     
+    //   })
+    // }else{
+    //   this.setData({
+    //     isShow: true,
+    //     startTime: wx.getStorageSync("startTime") || '8:00'
+    //   })
+    // }
+    this.setData({
+      startTime: wx.getStorageSync("startTime") || '8:00',
+      sliderValue: wx.getStorageSync('num') || this.data.sliderValue
+    })
+    
   },
 
   /**
