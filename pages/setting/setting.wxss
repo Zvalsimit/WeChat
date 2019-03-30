@@ -14,7 +14,7 @@
   border-radius: 10rpx;
   background: #fff;
 }
-.container > view >text{
+.container > view >text,.setting_time> view >text{
   color: #000;
   font-size: 32rpx;
   font-weight: bold
@@ -39,13 +39,24 @@
 .setting_time{  
   margin-top:20rpx;
   height: auto;
-  flex: 1;
+  flex: 1
 }
 .slider{
-  padding:50rpx 0
+  padding:20rpx 0
 }
 .picker{
   color:#999;
   font-size: 32rpx;
-  padding:20rpx 0 0 0
+  padding:20rpx 0
 }
+.switch{
+  display: flex;
+  justify-content: space-between;
+  
+}
+.switch text{
+  color: #000;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+

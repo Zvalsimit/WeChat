@@ -1,13 +1,41 @@
 <!--index.wxml-->
-<!-- <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class="container" style="height:{{height}}px; background:{{bg}}">
+  <view class="canvas">
+    <canvas class="clock" canvas-id="clockCanvas">
+      <cover-view bindtap="switchChange">
+      <cover-image src="../../images/clock.png" class="imgClock {{num == 3&&'active'||''}}"></cover-image>
+      </cover-view>
+    </canvas>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <!-- <view class="button" wx:if="{{!normalClock && isShow}}">
+    <view wx:if="{{pauseIsShow}}">
+      <image src='../../images/pause.png' bindtap="pauseBtn" data-index="1" ></image>
+      <text wx:if ="{{runTime == 0}}" >开始</text>
+      <text wx:else>继续</text>
+    </view>
+    <view wx:else>
+      <image src='../../images/start.png' bindtap="pauseBtn" data-index="2"></image>
+      <text>暂停</text>
+    </view>
+    <view>
+      <image src='../../images/reset.png' bindtap="reset"></image>
+      <text>重置</text>
+    </view>    
+  </view> -->
+  <view class='btn-wrap'>
+    <view class='btn-wrap-item' data-id="4" bindtap='changeNum'>4小时</view>
+    <view class='btn-wrap-item' data-id="6" bindtap='changeNum'>6小时</view>
+    <view class='btn-wrap-item' data-id="8" bindtap='changeNum'>8小时</view>
+    <view class='btn-wrap-item' data-id="10" bindtap='changeNum'>10小时</view>
   </view>
-</view> -->
+</view>
+<view class="tip" style="height:{{height}}px;" wx:if="{{isIKonw}}">
+  <view class='top'>多边形为自我时钟计时</view>
+  <view>显示针为分针与秒针</view>
+  <view>中心圆形为普通时钟，点击显示时针。</view>
+  <view class='tip-btn'>
+    <view>自以为是的我，有自己的时间，故曰：自我时钟</view>
+    <view>其他时间到设置里设置</view>
+    <button bindtap="iKonw">我知道了</button>
+  </view>
+</view>

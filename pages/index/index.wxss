@@ -1,21 +1,136 @@
 /**index.wxss**/
-.userinfo {
+page{
+  height:100%
+}
+.container{
+  background: #f0a2a0;
+  height:100%;
+  position: relative
+}
+.canvas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:78%;
+}
+.clock{
+  width:530rpx;
+  height: 530rpx;
+}
+.button{
+  width: 400rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:0 auto;
+  position: absolute;
+  bottom:80rpx;
+  left:50%;
+  margin-left: -200rpx;
+}
+.button image{
+  width:84rpx;
+  height:84rpx;
+}
+.button > view{
   display: flex;
   flex-direction: column;
+  justify-content:  center;
   align-items: center;
-}
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.button > view text{
+  color:#fff;
+  font-size: 32rpx;
+  margin-top: 20rpx;
 }
-
-.usermotto {
-  margin-top: 200px;
+.normal_clock{
+  position: absolute;
+  top:30rpx;
+  left:30rpx;
+}
+.normal_clock text{
+  font-size: 32rpx;
+  color:#fff;
+  margin-right:20rpx;
+}
+cover-view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:530rpx;
+  height: 530rpx;
+}
+.imgClock{
+  width:350rpx;
+  height:350rpx;
+}
+.imgClock.active{
+  width:300rpx;
+  height:300rpx;
+}
+.tip{
+  color:#EBC79E;
+  font-size: 30rpx;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  text-align: center;
+  padding-top: 32vh;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  background:rgba(0,0, 0, 0.4);
+}
+.tip-btn{
+  position: absolute;
+  width: 100%;
+  background:rgba(0,0, 0, 0.7);
+  height: 32%;
+  bottom:0;
+  box-sizing: border-box;
+}
+.tip .top{
+  position: absolute;
+  top: 150rpx;
+  right: 40rpx;
+}
+.tip-btn view{
+  line-height: 100rpx;
+  font-size: 34rpx;
+}
+.tip-btn view:nth-child(2){
+  font-size: 30rpx;
+}
+.tip button{
+  width:200rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  padding:0;
+  font-size: 28rpx;
+  margin: 40rpx calc(50% - 100rpx) 0;
+  background:none;
+  border:#EBC79E 1px solid;
+  color:#EBC79E;
+}
+.btn-wrap{
+  display: flex;
+  width:530rpx;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.btn-wrap-item{
+  min-width: 45%;
+  color: #ddd;
+  border:1px solid #ddd;
+  line-height: 40rpx;
+  text-align: center;
+  flex: 1;
+  margin-top: 20rpx;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  font-size:32rpx;
+}
+.btn-wrap-item:nth-child(2n){
+  margin-left: 20rpx;
 }

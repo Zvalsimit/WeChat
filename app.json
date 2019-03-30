@@ -1,16 +1,15 @@
 {
-  "pages": [
-    "pages/setting/setting",
+  "pages": [   
     "pages/index/index",
     "pages/logs/logs",
-    
+    "pages/setting/setting",
     "pages/help/help",
     "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "自我时间",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -21,26 +20,26 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_selected.png"
       },
       {
         "pagePath": "pages/help/help",
         "text": "帮助",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "images/help.png",
+        "selectedIconPath": "images/help_selected.png"
       },
       {
         "pagePath": "pages/about/about",
         "text": "关于",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "images/about.png",
+        "selectedIconPath": "images/about_selected.png"
       },
       {
         "pagePath": "pages/setting/setting",
         "text": "设置",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "images/setting.png",
+        "selectedIconPath": "images/setting_selected.png"
       }
     ]
   }
